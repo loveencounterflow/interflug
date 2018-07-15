@@ -1,0 +1,25 @@
+{
+  "name": "interflug",
+  "version": "0.1.0",
+  "description": "Service module mainly for Electron apps that handles keyboard events, GUI window switching, and sending key events into other applications (Linux only)",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loveencounterflow/interflug.git"
+  },
+  "keywords": [
+    "keyboard",
+    "app",
+    "gui",
+    "sendkeys"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loveencounterflow/interflug/issues"
+  },
+  "homepage": "https://github.com/loveencounterflow/interflug#readme"
+}
