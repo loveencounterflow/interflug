@@ -1,8 +1,6 @@
 
 ![](https://raw.githubusercontent.com/loveencounterflow/interflug/master/artwork/Interflug.svg.png)
 
-# Interflug
-
 ## Prerequisites
 
 *Interflug* uses the `wmctrl` and `xte` command line tools for window management and
@@ -29,6 +27,20 @@ ifl = IFL.new()
 IFL.set_window_ids ifl
 ```
 
+### Demo Two
+
+Once you know the target window ID, you can send arbitrary text to that window:
+
+```
+ifl = IFL.new()
+IFL.set_window_ids              ifl
+IFL.send_text_to_target_window  ifl, "demonstrating Unicode: äöü𤬣"
+```
+
+`IFL.send_text_to_target_window` switches to the target window, paste the text
+passed as second argument, and then switch back to the own window. The text
+argument is optional; if it is omitted, then the current X11 clipboard contents
+will be used.
 
 <!--
 

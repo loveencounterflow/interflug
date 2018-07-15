@@ -30,6 +30,7 @@ is_tty                    = process.stdout.isTTY
 @new = ->
   R =
     '~isa':   'INTERFLUG/state'
+    command:    null
     windows:
       self:     null
       target:   null
@@ -40,37 +41,43 @@ is_tty                    = process.stdout.isTTY
   return null
 
 #-----------------------------------------------------------------------------------------------------------
-@send_text = ( S, text = null ) ->
-  @copy text if text?
-  # command = """wmctrl -a Sublime && xte 'usleep 250000' 'keydown Control_L' 'key v' 'keyup Control_L'"""
-  command = """wmctrl -i -a 0x06c00001 && xte 'usleep 250000' 'keydown Control_L' 'key v' 'keyup Control_L' && wmctrl -i -a 0x05000005"""
-  CP.execSync command
+@send_text_to_target_window = ( S, text = null ) ->
+  @copy S, text if text?
+  S.command = """
+    wmctrl -i -a #{S.windows.target} &&
+    xte 'usleep 250000' 'keydown Control_L' 'key v' 'keyup Control_L' &&
+    wmctrl -i -a #{S.windows.self}""".replace /\s+/gs, ' '
+  CP.execSync S.command
   return null
 
 #-----------------------------------------------------------------------------------------------------------
-@switch_to_window_by_id = ( id ) ->
-  command = """wmctrl -i -a #{id}"""
-  message = CP.execSync command, { encoding: 'utf-8', }
+@switch_to_own_window     = ( S ) -> @_switch_to_window_by_id S, S.windows.self
+@switch_to_target_window  = ( S ) -> @_switch_to_window_by_id S, S.windows.target
+
+#-----------------------------------------------------------------------------------------------------------
+@_switch_to_window_by_id = ( S, id ) ->
+  S.command = """wmctrl -i -a #{id}"""
+  message = CP.execSync S.command, { encoding: 'utf-8', }
   return null
 
 #-----------------------------------------------------------------------------------------------------------
-@_get_id_of_active_window = ->
-  command = """wmctrl -v -a :ACTIVE: 2>&1"""
-  message = CP.execSync command, { encoding: 'utf-8', }
+@_get_id_of_active_window = ( S ) ->
+  S.command = """wmctrl -v -a :ACTIVE: 2>&1"""
+  message = CP.execSync S.command, { encoding: 'utf-8', }
   return message.replace /^.*window:\s*(\S+)\s*$/gs, '$1'
 
 #-----------------------------------------------------------------------------------------------------------
-@_get_id_of_selected_window = ->
-  command = """wmctrl -v -a :SELECT: 2>&1"""
-  message = CP.execSync command, { encoding: 'utf-8', }
+@_get_id_of_selected_window = ( S ) ->
+  S.command = """wmctrl -v -a :SELECT: 2>&1"""
+  message = CP.execSync S.command, { encoding: 'utf-8', }
   return message.replace /^.*window:\s*(\S+)\s*$/gs, '$1'
 
 #-----------------------------------------------------------------------------------------------------------
 @set_window_ids = ( S ) ->
   urge "switch to the target window and click into it" if is_tty
-  S.windows.self    = @_get_id_of_active_window()
-  S.windows.target  = @_get_id_of_selected_window()
-  @switch_to_window_by_id S.windows.self
+  S.windows.self    = @_get_id_of_active_window   S
+  S.windows.target  = @_get_id_of_selected_window S
+  @_switch_to_window_by_id S, S.windows.self
 
 
 
