@@ -31,7 +31,7 @@ ifl = IFL.new()
 IFL.set_window_ids              ifl
 # IFL.switch_to_own_window        ifl
 # IFL.switch_to_target_window     ifl
-IFL.send_text_to_target_window  ifl, "demonstrating Unicode: äöü𤬣"
+IFL.send_text_to_target_window  ifl, "demonstrating Unicode: äöü 书争事𫞖𫠠𫠣"
 # IFL.switch_to_own_window        ifl
 debug ifl
 

@@ -10,6 +10,13 @@ sending keystrokes; on many systems, these can be installed as:
 sudo apt install xautomation wmctrl
 ```
 
+*Interflug* uses [sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy) which requires
+`xsel`:
+
+```
+sudo apt install xsel
+```
+
 ## Demos
 
 ### Demo One
