@@ -3,18 +3,12 @@
 
 ## Prerequisites
 
-*Interflug* uses the `wmctrl` and `xte` command line tools for window management and
-sending keystrokes; on many systems, these can be installed as:
+*Interflug* uses the `wmctrl` and `xte` command line tools for window management and sending keystrokes.
+Furthermore, it depends on [sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy) which in
+turn requires `xsel`. All of these can be installed on Debian-ish/Ubuntu-ish systems with `apt`:
 
 ```
-sudo apt install xautomation wmctrl
-```
-
-*Interflug* uses [sindresorhus/clipboardy](https://github.com/sindresorhus/clipboardy) which requires
-`xsel`:
-
-```
-sudo apt install xsel
+sudo apt install xautomation wmctrl xsel
 ```
 
 ## Demos
