@@ -79,7 +79,11 @@ is_tty                    = process.stdout.isTTY
   S.windows.target  = @_get_id_of_selected_window S
   @_switch_to_window_by_id S, S.windows.self
 
-
+#-----------------------------------------------------------------------------------------------------------
+@_read_pids_and_window_ids    = ( require './wid-from-pid' )._read_pids_and_window_ids.bind   @
+@get_pids_and_window_ids      = ( require './wid-from-pid' ).get_pids_and_window_ids.bind     @
+@window_id_from_pid           = ( require './wid-from-pid' ).window_id_from_pid.bind          @
+@wait_for_window_id_from_pid  = ( require './wid-from-pid' ).wait_for_window_id_from_pid.bind @
 
 
 
