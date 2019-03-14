@@ -22,7 +22,7 @@ PD                        = require 'pipedreams'
   jr }                    = CND
 L                         = @
 CP                        = require 'child_process'
-IFL                       = require 'interflug'
+IFL                       = require '../..'
 
 
 f = ->
@@ -255,21 +255,6 @@ f = ->
         else
           send d
     return null
-
-###
-dsdfsdf´[omega]
-dgdfgdf´1[1234}´oe[oemga}
-
-dfsdfsdf[1234][omega]\omega [omega]
-helo ω and Ω!!
-xxxx23423423423423
-sdhjsdhg jshd fkjsdhfkjfk jsjhajfh kjhs
-
-dfadgdfgdfg ω
-abcxr
-
-###
-
 
 #-----------------------------------------------------------------------------------------------------------
 @send_backspace = ->
