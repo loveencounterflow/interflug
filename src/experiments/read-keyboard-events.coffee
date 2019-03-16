@@ -15,7 +15,8 @@ echo                      = CND.echo.bind CND
 #...........................................................................................................
 PATH                      = require 'path'
 PD                        = require 'pipedreams'
-{ $
+{ XE
+  $
   $async
   select }                = PD
 { assign
@@ -161,7 +162,7 @@ f = ->
 
 #-----------------------------------------------------------------------------------------------------------
 @$decode_keyboard_event_buffer = ->
-  keycodes      = require './key-event-codes'
+  keycodes      = require './_key-event-codes.data'
   return $ ( buffer, send ) ->
     return null unless ( type = buffer.readUInt16LE 16 ) is 1
     code  = buffer.readUInt16LE 18
@@ -172,6 +173,45 @@ f = ->
     return null
 
 #-----------------------------------------------------------------------------------------------------------
+@$capture_levels = ->
+  nested_levels = false
+  prv_shift     = null
+  state         =
+    leftshift:    false
+    rightshift:   false
+    leftmeta:     false
+    rightmeta:    false
+    leftctrl:     false
+    rightctrl:    false
+    leftalt:      false
+    rightalt:     false
+    capslock:     false
+    numlock:      false
+    insert:       false
+    compose:      false
+  #.........................................................................................................
+  return $ ( d, send ) ->
+    # debug '26622', d, prv_shift
+    is_within_level = state[ d.name ]
+    is_shift        = is_within_level?
+    if is_shift
+      if d.move is 'down'
+        prv_shift = d.name
+      else if d.name is prv_shift
+        unless nested_levels
+          for name, toggle of state
+            continue if name is d.name
+            if toggle
+              state[ name ] = false
+              send { key: '>level', name, }
+        key             = if is_within_level then '>level' else '<level'
+        state[ d.name ] = not state[ d.name ]
+        send { key, name: d.name, }
+    else
+      prv_shift = null
+    send d
+
+#-----------------------------------------------------------------------------------------------------------
 @$capture_modifiers = ->
   modifiers = []
   state     =
@@ -180,17 +220,20 @@ f = ->
     meta:       false
     alt:        false
     altgr:      false
+    capslock:   false
   #.........................................................................................................
   return $ ( d, send ) ->
+    return send d unless d.key is '^key'
     switch d.name
-      when 'leftshift', 'rightshift'  then state.shift  = ( d.move is 'down' )
-      when 'leftmeta',  'rightmeta'   then state.meta   = ( d.move is 'down' )
-      when 'leftctrl',  'rightctrl'   then state.ctrl   = ( d.move is 'down' )
-      when 'leftalt'                  then state.alt    = ( d.move is 'down' )
-      when 'rightalt'                 then state.altgr  = ( d.move is 'down' )
+      when 'leftshift', 'rightshift'  then state.shift    = ( d.move is 'down' )
+      when 'leftmeta',  'rightmeta'   then state.meta     = ( d.move is 'down' )
+      when 'leftctrl',  'rightctrl'   then state.ctrl     = ( d.move is 'down' )
+      when 'leftalt'                  then state.alt      = ( d.move is 'down' )
+      when 'rightalt'                 then state.altgr    = ( d.move is 'down' )
+      when 'capslock'                 then state.capslock = ( d.move is 'down' )
       else
         modifiers.length = 0
-        for name in [ 'alt', 'altgr', 'ctrl', 'meta', 'shift', ]
+        for name in [ 'alt', 'altgr', 'ctrl', 'meta', 'shift', 'capslock', ]
           continue unless state[ name ]
           d[ name ] = true
           modifiers.push name
@@ -206,12 +249,30 @@ f = ->
     send d
 
 #-----------------------------------------------------------------------------------------------------------
+@$rechunk_buffer = ( bytecount ) ->
+  return $ ( d, send ) =>
+    unless ( type = CND.type_of d ) is 'buffer'
+      throw new Error "expected a buffer, got a #{type}"
+    unless ( d.length %% bytecount ) is 0
+      throw new Error "not a multiple of #{bytecount}: #{d.length}"
+    for n in [ 0 ... d.length // bytecount ]
+      start = n * bytecount
+      stop  = start + bytecount
+      send d.slice start, stop
+    return null
+
+#-----------------------------------------------------------------------------------------------------------
 @read_from_keyboard = ( keyboard_mapping ) ->
-  path      = '/dev/input/by-path/platform-i8042-serio-0-event-kbd'
-  source    = PD.read_chunks_from_file path, 24
+  # path      = '/dev/input/by-path/platform-i8042-serio-0-event-kbd'
+  # source    = PD.read_chunks_from_file path, 24
+  source    = @new_keyboard_bytestream()
   pipeline  = []
   pipeline.push source
+  pipeline.push PD.$watch ( x ) -> debug 'µ29982', ( CND.type_of x ), x?.length ? null
+  pipeline.push @$rechunk_buffer 24
+  pipeline.push PD.$show()
   pipeline.push @$decode_keyboard_event_buffer()
+  pipeline.push @$capture_levels()
   pipeline.push @$capture_modifiers()
   pipeline.push @$map_keyboard_events keyboard_mapping
   #.........................................................................................................
@@ -268,6 +329,10 @@ f = ->
 @send_paste = ->
   CP.execSync """xte 'keydown Control_L' 'key v' 'keyup Control_L'"""
 
+#-----------------------------------------------------------------------------------------------------------
+@$emit = -> PD.$watch ( d ) -> XE.emit d
+XE.listen_to_all ( key, d ) =>
+  ( if d.key is '^key' then whisper else urge ) 'µ52982', jr d
 
 #-----------------------------------------------------------------------------------------------------------
 @demo = ->
@@ -278,11 +343,52 @@ f = ->
     pipeline          = []
     pipeline.push source
     pipeline.push @$compose_keys()
+    pipeline.push @$emit()
     # pipeline.push PD.$show()
     pipeline.push PD.$drain -> resolve()
     PD.pull pipeline...
     return null
 
+#-----------------------------------------------------------------------------------------------------------
+@_new_stderr_catcher = ( command, cp ) ->
+  source    = PD.read_from_nodejs_stream cp.stderr
+  lines     = []
+  pipeline  = []
+  #.........................................................................................................
+  cp.on 'exit', ( code ) ->
+    if code isnt 0
+      lines   = lines.join '\n'
+      message = "#{lines}\nchild process #{jr command} exited with code #{code}"
+      throw new Error message
+    return null
+  #.........................................................................................................
+  pipeline.push source
+  pipeline.push PD.$split()
+  pipeline.push PD.$watch ( line ) -> lines.push line
+  pipeline.push PD.$drain()
+  PD.pull pipeline...
+  return null
+
+#-----------------------------------------------------------------------------------------------------------
+@new_keyboard_bytestream = ->
+  path      = PATH.resolve PATH.join __dirname, 'pipe-keyboard-to-stdout.js'
+  command   = [ 'sudo', 'node', path, ]
+  cp        = CP.spawn command[ 0 ], command[ 1 .. ], { shell: false, encoding: 'buffer', }
+  # debug '26652', "secondary PID:", cp.pid
+  # debug '26652', "primary   PID:", process.pid
+  # debug '26652', "primary   UID:", process.getuid()
+  @_new_stderr_catcher command, cp
+  return PD.read_from_nodejs_stream cp.stdout
+
+#-----------------------------------------------------------------------------------------------------------
+@demo_keyboard_bytestream = ->
+  source = L.new_keyboard_bytestream()
+  pipeline  = []
+  pipeline.push source
+  pipeline.push PD.$show()
+  pipeline.push PD.$drain()
+  PD.pull pipeline...
+  return null
 
 
 ############################################################################################################
@@ -293,6 +399,7 @@ unless module.parent?
     # info '23883', keyboard_mapping
     # await L.read_xmodmap()
     await L.demo()
+
 
 ###
 
