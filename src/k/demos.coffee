@@ -4,7 +4,7 @@
 ############################################################################################################
 CND                       = require 'cnd'
 rpr                       = CND.rpr
-badge                     = 'INTERFLUG/K'
+badge                     = 'INTERFLUG/K/DEMO'
 debug                     = CND.get_logger 'debug',     badge
 warn                      = CND.get_logger 'warn',      badge
 info                      = CND.get_logger 'info',      badge
@@ -23,7 +23,7 @@ PD                        = require 'pipedreams'
   jr }                    = CND
 CP                        = require 'child_process'
 IFL                       = require '../..'
-
+IFL.K                     = require './read-keyboard-events'
 
 
 #===========================================================================================================
@@ -39,7 +39,7 @@ IFL                       = require '../..'
     switch d.id
       when start_compose_id
         ### flush collected characters so far ###
-        debug '39383', 'start_compose_id'
+        # debug '39383', 'start_compose_id'
         composing         = true
         collector.length  = 0
       when stop_compose_id
@@ -50,7 +50,7 @@ IFL                       = require '../..'
           omega:  'ω'
           Omega:  'Ω' }
         composed_txt = translations[ composed_txt ] ? composed_txt
-        debug '39383', 'stop_compose_id', rpr composed_txt
+        # debug '39383', 'stop_compose_id', rpr composed_txt
         CLIPBOARD                 = require 'clipboardy'
         CLIPBOARD.writeSync composed_txt
         # IFL.copy null, collector.join ''
@@ -61,7 +61,7 @@ IFL                       = require '../..'
         collector.length = 0
       else
         if composing
-          debug '39383', 'composing'
+          # debug '39383', 'composing'
           collector.push d.text
         else
           send d
@@ -81,31 +81,30 @@ IFL                       = require '../..'
 
 #-----------------------------------------------------------------------------------------------------------
 @$emit = -> PD.$watch ( d ) -> XE.emit d
-XE.listen_to_all ( key, d ) =>
-  ( if d.key is '^key' then whisper else urge ) 'µ52982', jr d
+# XE.listen_to_all ( key, d ) =>
+#   ( if d.key is '^key' then whisper else urge ) 'µ52982', jr d
 
 #-----------------------------------------------------------------------------------------------------------
 @demo_keyboard_bytestream = ->
   source    = L._new_keyboard_bytestream()
   pipeline  = []
   pipeline.push source
-  pipeline.push PD.$show()
+  # pipeline.push PD.$show()
   pipeline.push PD.$drain()
   PD.pull pipeline...
   return null
 
 #-----------------------------------------------------------------------------------------------------------
 @demo = ->
-  return new Promise ( resolve, reject ) =>
-    source            = @read_from_keyboard()
-    pipeline          = []
-    pipeline.push source
-    pipeline.push @$demo_compose_keys()
-    pipeline.push @$emit()
-    # pipeline.push PD.$show()
-    pipeline.push PD.$drain -> resolve()
-    PD.pull pipeline...
-    return null
+  source            = IFL.K.new_keyboard_event_source()
+  pipeline          = []
+  pipeline.push source
+  pipeline.push @$demo_compose_keys()
+  pipeline.push @$emit()
+  pipeline.push PD.$show()
+  pipeline.push PD.$drain()
+  PD.pull pipeline...
+  return null
 
 ############################################################################################################
 unless module.parent?
