@@ -1,6 +1,6 @@
 {
   "name": "interflug",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Service module mainly for Electron apps that handles keyboard events, GUI window switching, and sending key events into other applications (Linux only)",
   "main": "lib/main.js",
   "scripts": {
