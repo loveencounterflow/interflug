@@ -161,8 +161,10 @@ been able to use it successfully
       return null
   #.........................................................................................................
   return new Promise ( resolve, reject ) =>
-    input_path  = PATH.resolve          __dirname, '../../src/k/xev-events'
-    output_path = require PATH.resolve  __dirname, '../../src/k/keyboard-map.json'
+    input_path  = PATH.resolve  __dirname, '../../src/k/xev-events'
+    output_path = PATH.resolve  __dirname, '../../src/k/keyboard-map.json'
+    debug 'µ36633', "input path   ", input_path
+    debug 'µ36633', "output path  ", output_path
     pipeline    = []
     pipeline.push PD.read_from_file input_path
     pipeline.push PD.$split()
@@ -172,13 +174,13 @@ been able to use it successfully
     pipeline.push $parse_event_text()
     pipeline.push $assemble()
     # pipeline.push PD.$show title: '33873-1'
-    # pipeline.push $ ( d, send ) -> echo d
+    pipeline.push $ ( d, send ) -> send JSON.stringify d, null, '  '
     pipeline.push PD.write_to_file output_path
     PD.pull pipeline...
     return null
 
 ############################################################################################################
 unless module.parent?
-  @write_keyboard_mapping()
+  do => await @write_keyboard_mapping()
 
 

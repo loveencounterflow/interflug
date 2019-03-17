@@ -1,0 +1,1487 @@
+{
+  "null-41": {
+    "key": "^xev",
+    "code": 41,
+    "text": "^",
+    "id": "null-41"
+  },
+  "shift-41": {
+    "key": "^xev",
+    "code": 41,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "°",
+    "id": "shift-41"
+  },
+  "null-2": {
+    "key": "^xev",
+    "code": 2,
+    "text": "1",
+    "id": "null-2"
+  },
+  "shift-2": {
+    "key": "^xev",
+    "code": 2,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "!",
+    "id": "shift-2"
+  },
+  "null-3": {
+    "key": "^xev",
+    "code": 3,
+    "text": "2",
+    "id": "null-3"
+  },
+  "shift-3": {
+    "key": "^xev",
+    "code": 3,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "\"",
+    "id": "shift-3"
+  },
+  "null-4": {
+    "key": "^xev",
+    "code": 4,
+    "text": "3",
+    "id": "null-4"
+  },
+  "shift-4": {
+    "key": "^xev",
+    "code": 4,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "§",
+    "id": "shift-4"
+  },
+  "null-5": {
+    "key": "^xev",
+    "code": 5,
+    "text": "4",
+    "id": "null-5"
+  },
+  "shift-5": {
+    "key": "^xev",
+    "code": 5,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "$",
+    "id": "shift-5"
+  },
+  "null-6": {
+    "key": "^xev",
+    "code": 6,
+    "text": "5",
+    "id": "null-6"
+  },
+  "shift-6": {
+    "key": "^xev",
+    "code": 6,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "%",
+    "id": "shift-6"
+  },
+  "null-7": {
+    "key": "^xev",
+    "code": 7,
+    "text": "6",
+    "id": "null-7"
+  },
+  "shift-7": {
+    "key": "^xev",
+    "code": 7,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "&",
+    "id": "shift-7"
+  },
+  "null-8": {
+    "key": "^xev",
+    "code": 8,
+    "text": "7",
+    "id": "null-8"
+  },
+  "shift-8": {
+    "key": "^xev",
+    "code": 8,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "/",
+    "id": "shift-8"
+  },
+  "null-9": {
+    "key": "^xev",
+    "code": 9,
+    "text": "8",
+    "id": "null-9"
+  },
+  "shift-9": {
+    "key": "^xev",
+    "code": 9,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "(",
+    "id": "shift-9"
+  },
+  "null-10": {
+    "key": "^xev",
+    "code": 10,
+    "text": "9",
+    "id": "null-10"
+  },
+  "shift-10": {
+    "key": "^xev",
+    "code": 10,
+    "shift": true,
+    "modifiers": "shift",
+    "text": ")",
+    "id": "shift-10"
+  },
+  "null-11": {
+    "key": "^xev",
+    "code": 11,
+    "text": "0",
+    "id": "null-11"
+  },
+  "shift-11": {
+    "key": "^xev",
+    "code": 11,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "=",
+    "id": "shift-11"
+  },
+  "null-12": {
+    "key": "^xev",
+    "code": 12,
+    "text": "ß",
+    "id": "null-12"
+  },
+  "shift-12": {
+    "key": "^xev",
+    "code": 12,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "?",
+    "id": "shift-12"
+  },
+  "null-13": {
+    "key": "^xev",
+    "code": 13,
+    "text": "´",
+    "id": "null-13"
+  },
+  "shift-13": {
+    "key": "^xev",
+    "code": 13,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "`",
+    "id": "shift-13"
+  },
+  "altgr-41": {
+    "key": "^xev",
+    "code": 41,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¬",
+    "id": "altgr-41"
+  },
+  "altgr+shift-41": {
+    "key": "^xev",
+    "code": 41,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¬",
+    "id": "altgr+shift-41"
+  },
+  "null-15": {
+    "key": "^xev",
+    "code": 15,
+    "text": "\t",
+    "id": "null-15"
+  },
+  "null-16": {
+    "key": "^xev",
+    "code": 16,
+    "text": "q",
+    "id": "null-16"
+  },
+  "null-17": {
+    "key": "^xev",
+    "code": 17,
+    "text": "w",
+    "id": "null-17"
+  },
+  "null-18": {
+    "key": "^xev",
+    "code": 18,
+    "text": "e",
+    "id": "null-18"
+  },
+  "null-19": {
+    "key": "^xev",
+    "code": 19,
+    "text": "r",
+    "id": "null-19"
+  },
+  "null-20": {
+    "key": "^xev",
+    "code": 20,
+    "text": "t",
+    "id": "null-20"
+  },
+  "null-21": {
+    "key": "^xev",
+    "code": 21,
+    "text": "z",
+    "id": "null-21"
+  },
+  "null-22": {
+    "key": "^xev",
+    "code": 22,
+    "text": "u",
+    "id": "null-22"
+  },
+  "null-23": {
+    "key": "^xev",
+    "code": 23,
+    "text": "i",
+    "id": "null-23"
+  },
+  "null-24": {
+    "key": "^xev",
+    "code": 24,
+    "text": "o",
+    "id": "null-24"
+  },
+  "null-25": {
+    "key": "^xev",
+    "code": 25,
+    "text": "p",
+    "id": "null-25"
+  },
+  "null-26": {
+    "key": "^xev",
+    "code": 26,
+    "text": "ü",
+    "id": "null-26"
+  },
+  "null-27": {
+    "key": "^xev",
+    "code": 27,
+    "text": "+",
+    "id": "null-27"
+  },
+  "null-30": {
+    "key": "^xev",
+    "code": 30,
+    "text": "a",
+    "id": "null-30"
+  },
+  "null-31": {
+    "key": "^xev",
+    "code": 31,
+    "text": "s",
+    "id": "null-31"
+  },
+  "null-32": {
+    "key": "^xev",
+    "code": 32,
+    "text": "d",
+    "id": "null-32"
+  },
+  "null-33": {
+    "key": "^xev",
+    "code": 33,
+    "text": "f",
+    "id": "null-33"
+  },
+  "null-34": {
+    "key": "^xev",
+    "code": 34,
+    "text": "g",
+    "id": "null-34"
+  },
+  "null-35": {
+    "key": "^xev",
+    "code": 35,
+    "text": "h",
+    "id": "null-35"
+  },
+  "null-36": {
+    "key": "^xev",
+    "code": 36,
+    "text": "j",
+    "id": "null-36"
+  },
+  "null-37": {
+    "key": "^xev",
+    "code": 37,
+    "text": "k",
+    "id": "null-37"
+  },
+  "null-38": {
+    "key": "^xev",
+    "code": 38,
+    "text": "l",
+    "id": "null-38"
+  },
+  "null-39": {
+    "key": "^xev",
+    "code": 39,
+    "text": "ö",
+    "id": "null-39"
+  },
+  "null-40": {
+    "key": "^xev",
+    "code": 40,
+    "text": "ä",
+    "id": "null-40"
+  },
+  "null-43": {
+    "key": "^xev",
+    "code": 43,
+    "text": "#",
+    "id": "null-43"
+  },
+  "null-86": {
+    "key": "^xev",
+    "code": 86,
+    "text": "<",
+    "id": "null-86"
+  },
+  "null-44": {
+    "key": "^xev",
+    "code": 44,
+    "text": "y",
+    "id": "null-44"
+  },
+  "null-45": {
+    "key": "^xev",
+    "code": 45,
+    "text": "x",
+    "id": "null-45"
+  },
+  "null-46": {
+    "key": "^xev",
+    "code": 46,
+    "text": "c",
+    "id": "null-46"
+  },
+  "null-47": {
+    "key": "^xev",
+    "code": 47,
+    "text": "v",
+    "id": "null-47"
+  },
+  "null-48": {
+    "key": "^xev",
+    "code": 48,
+    "text": "b",
+    "id": "null-48"
+  },
+  "null-49": {
+    "key": "^xev",
+    "code": 49,
+    "text": "n",
+    "id": "null-49"
+  },
+  "null-50": {
+    "key": "^xev",
+    "code": 50,
+    "text": "m",
+    "id": "null-50"
+  },
+  "null-51": {
+    "key": "^xev",
+    "code": 51,
+    "text": ",",
+    "id": "null-51"
+  },
+  "null-52": {
+    "key": "^xev",
+    "code": 52,
+    "text": ".",
+    "id": "null-52"
+  },
+  "null-53": {
+    "key": "^xev",
+    "code": 53,
+    "text": "-",
+    "id": "null-53"
+  },
+  "shift-16": {
+    "key": "^xev",
+    "code": 16,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Q",
+    "id": "shift-16"
+  },
+  "shift-17": {
+    "key": "^xev",
+    "code": 17,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "W",
+    "id": "shift-17"
+  },
+  "shift-18": {
+    "key": "^xev",
+    "code": 18,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "E",
+    "id": "shift-18"
+  },
+  "shift-19": {
+    "key": "^xev",
+    "code": 19,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "R",
+    "id": "shift-19"
+  },
+  "shift-20": {
+    "key": "^xev",
+    "code": 20,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "T",
+    "id": "shift-20"
+  },
+  "shift-21": {
+    "key": "^xev",
+    "code": 21,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Z",
+    "id": "shift-21"
+  },
+  "shift-22": {
+    "key": "^xev",
+    "code": 22,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "U",
+    "id": "shift-22"
+  },
+  "shift-23": {
+    "key": "^xev",
+    "code": 23,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "I",
+    "id": "shift-23"
+  },
+  "shift-24": {
+    "key": "^xev",
+    "code": 24,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "O",
+    "id": "shift-24"
+  },
+  "shift-25": {
+    "key": "^xev",
+    "code": 25,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "P",
+    "id": "shift-25"
+  },
+  "shift-26": {
+    "key": "^xev",
+    "code": 26,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Ü",
+    "id": "shift-26"
+  },
+  "shift-27": {
+    "key": "^xev",
+    "code": 27,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "*",
+    "id": "shift-27"
+  },
+  "shift-30": {
+    "key": "^xev",
+    "code": 30,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "A",
+    "id": "shift-30"
+  },
+  "shift-31": {
+    "key": "^xev",
+    "code": 31,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "S",
+    "id": "shift-31"
+  },
+  "shift-32": {
+    "key": "^xev",
+    "code": 32,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "D",
+    "id": "shift-32"
+  },
+  "shift-33": {
+    "key": "^xev",
+    "code": 33,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "F",
+    "id": "shift-33"
+  },
+  "shift-34": {
+    "key": "^xev",
+    "code": 34,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "G",
+    "id": "shift-34"
+  },
+  "shift-35": {
+    "key": "^xev",
+    "code": 35,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "H",
+    "id": "shift-35"
+  },
+  "shift-36": {
+    "key": "^xev",
+    "code": 36,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "J",
+    "id": "shift-36"
+  },
+  "shift-37": {
+    "key": "^xev",
+    "code": 37,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "K",
+    "id": "shift-37"
+  },
+  "shift-38": {
+    "key": "^xev",
+    "code": 38,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "L",
+    "id": "shift-38"
+  },
+  "shift-39": {
+    "key": "^xev",
+    "code": 39,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Ö",
+    "id": "shift-39"
+  },
+  "shift-40": {
+    "key": "^xev",
+    "code": 40,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Ä",
+    "id": "shift-40"
+  },
+  "shift-43": {
+    "key": "^xev",
+    "code": 43,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "'",
+    "id": "shift-43"
+  },
+  "shift-86": {
+    "key": "^xev",
+    "code": 86,
+    "shift": true,
+    "modifiers": "shift",
+    "text": ">",
+    "id": "shift-86"
+  },
+  "shift-44": {
+    "key": "^xev",
+    "code": 44,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "Y",
+    "id": "shift-44"
+  },
+  "shift-45": {
+    "key": "^xev",
+    "code": 45,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "X",
+    "id": "shift-45"
+  },
+  "shift-46": {
+    "key": "^xev",
+    "code": 46,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "C",
+    "id": "shift-46"
+  },
+  "shift-47": {
+    "key": "^xev",
+    "code": 47,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "V",
+    "id": "shift-47"
+  },
+  "shift-48": {
+    "key": "^xev",
+    "code": 48,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "B",
+    "id": "shift-48"
+  },
+  "shift-49": {
+    "key": "^xev",
+    "code": 49,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "N",
+    "id": "shift-49"
+  },
+  "shift-50": {
+    "key": "^xev",
+    "code": 50,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "M",
+    "id": "shift-50"
+  },
+  "shift-51": {
+    "key": "^xev",
+    "code": 51,
+    "shift": true,
+    "modifiers": "shift",
+    "text": ";",
+    "id": "shift-51"
+  },
+  "shift-52": {
+    "key": "^xev",
+    "code": 52,
+    "shift": true,
+    "modifiers": "shift",
+    "text": ":",
+    "id": "shift-52"
+  },
+  "shift-53": {
+    "key": "^xev",
+    "code": 53,
+    "shift": true,
+    "modifiers": "shift",
+    "text": "_",
+    "id": "shift-53"
+  },
+  "altgr-2": {
+    "key": "^xev",
+    "code": 2,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¹",
+    "id": "altgr-2"
+  },
+  "altgr-3": {
+    "key": "^xev",
+    "code": 3,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "²",
+    "id": "altgr-3"
+  },
+  "altgr-4": {
+    "key": "^xev",
+    "code": 4,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "³",
+    "id": "altgr-4"
+  },
+  "altgr-5": {
+    "key": "^xev",
+    "code": 5,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¼",
+    "id": "altgr-5"
+  },
+  "altgr-6": {
+    "key": "^xev",
+    "code": 6,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "½",
+    "id": "altgr-6"
+  },
+  "altgr-7": {
+    "key": "^xev",
+    "code": 7,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¬",
+    "id": "altgr-7"
+  },
+  "altgr-8": {
+    "key": "^xev",
+    "code": 8,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "{",
+    "id": "altgr-8"
+  },
+  "altgr-9": {
+    "key": "^xev",
+    "code": 9,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "[",
+    "id": "altgr-9"
+  },
+  "altgr-10": {
+    "key": "^xev",
+    "code": 10,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "]",
+    "id": "altgr-10"
+  },
+  "altgr-11": {
+    "key": "^xev",
+    "code": 11,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "}",
+    "id": "altgr-11"
+  },
+  "altgr-12": {
+    "key": "^xev",
+    "code": 12,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "\\",
+    "id": "altgr-12"
+  },
+  "altgr-13": {
+    "key": "^xev",
+    "code": 13,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¸",
+    "id": "altgr-13"
+  },
+  "altgr-15": {
+    "key": "^xev",
+    "code": 15,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "\t",
+    "id": "altgr-15"
+  },
+  "altgr-16": {
+    "key": "^xev",
+    "code": 16,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "@",
+    "id": "altgr-16"
+  },
+  "altgr-17": {
+    "key": "^xev",
+    "code": 17,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ł",
+    "id": "altgr-17"
+  },
+  "altgr-18": {
+    "key": "^xev",
+    "code": 18,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "€",
+    "id": "altgr-18"
+  },
+  "altgr-19": {
+    "key": "^xev",
+    "code": 19,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¶",
+    "id": "altgr-19"
+  },
+  "altgr-20": {
+    "key": "^xev",
+    "code": 20,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ŧ",
+    "id": "altgr-20"
+  },
+  "altgr-21": {
+    "key": "^xev",
+    "code": 21,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "←",
+    "id": "altgr-21"
+  },
+  "altgr-22": {
+    "key": "^xev",
+    "code": 22,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "↓",
+    "id": "altgr-22"
+  },
+  "altgr-23": {
+    "key": "^xev",
+    "code": 23,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "→",
+    "id": "altgr-23"
+  },
+  "altgr-24": {
+    "key": "^xev",
+    "code": 24,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ø",
+    "id": "altgr-24"
+  },
+  "altgr-25": {
+    "key": "^xev",
+    "code": 25,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "þ",
+    "id": "altgr-25"
+  },
+  "altgr-26": {
+    "key": "^xev",
+    "code": 26,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¨",
+    "id": "altgr-26"
+  },
+  "altgr-27": {
+    "key": "^xev",
+    "code": 27,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "~",
+    "id": "altgr-27"
+  },
+  "altgr-30": {
+    "key": "^xev",
+    "code": 30,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "æ",
+    "id": "altgr-30"
+  },
+  "altgr-31": {
+    "key": "^xev",
+    "code": 31,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ſ",
+    "id": "altgr-31"
+  },
+  "altgr-32": {
+    "key": "^xev",
+    "code": 32,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ð",
+    "id": "altgr-32"
+  },
+  "altgr-33": {
+    "key": "^xev",
+    "code": 33,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "đ",
+    "id": "altgr-33"
+  },
+  "altgr-34": {
+    "key": "^xev",
+    "code": 34,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ŋ",
+    "id": "altgr-34"
+  },
+  "altgr-35": {
+    "key": "^xev",
+    "code": 35,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ħ",
+    "id": "altgr-35"
+  },
+  "altgr-37": {
+    "key": "^xev",
+    "code": 37,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ĸ",
+    "id": "altgr-37"
+  },
+  "altgr-38": {
+    "key": "^xev",
+    "code": 38,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "ł",
+    "id": "altgr-38"
+  },
+  "altgr-39": {
+    "key": "^xev",
+    "code": 39,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "˝",
+    "id": "altgr-39"
+  },
+  "altgr-40": {
+    "key": "^xev",
+    "code": 40,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "^",
+    "id": "altgr-40"
+  },
+  "altgr-43": {
+    "key": "^xev",
+    "code": 43,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "’",
+    "id": "altgr-43"
+  },
+  "altgr-86": {
+    "key": "^xev",
+    "code": 86,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "|",
+    "id": "altgr-86"
+  },
+  "altgr-44": {
+    "key": "^xev",
+    "code": 44,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "»",
+    "id": "altgr-44"
+  },
+  "altgr-45": {
+    "key": "^xev",
+    "code": 45,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "«",
+    "id": "altgr-45"
+  },
+  "altgr-46": {
+    "key": "^xev",
+    "code": 46,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "¢",
+    "id": "altgr-46"
+  },
+  "altgr-47": {
+    "key": "^xev",
+    "code": 47,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "„",
+    "id": "altgr-47"
+  },
+  "altgr-48": {
+    "key": "^xev",
+    "code": 48,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "“",
+    "id": "altgr-48"
+  },
+  "altgr-49": {
+    "key": "^xev",
+    "code": 49,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "”",
+    "id": "altgr-49"
+  },
+  "altgr-50": {
+    "key": "^xev",
+    "code": 50,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "µ",
+    "id": "altgr-50"
+  },
+  "altgr-51": {
+    "key": "^xev",
+    "code": 51,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "·",
+    "id": "altgr-51"
+  },
+  "altgr-52": {
+    "key": "^xev",
+    "code": 52,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "…",
+    "id": "altgr-52"
+  },
+  "altgr-53": {
+    "key": "^xev",
+    "code": 53,
+    "altgr": true,
+    "modifiers": "altgr",
+    "text": "–",
+    "id": "altgr-53"
+  },
+  "altgr+shift-2": {
+    "key": "^xev",
+    "code": 2,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¡",
+    "id": "altgr+shift-2"
+  },
+  "altgr+shift-3": {
+    "key": "^xev",
+    "code": 3,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "⅛",
+    "id": "altgr+shift-3"
+  },
+  "altgr+shift-4": {
+    "key": "^xev",
+    "code": 4,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "£",
+    "id": "altgr+shift-4"
+  },
+  "altgr+shift-5": {
+    "key": "^xev",
+    "code": 5,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¤",
+    "id": "altgr+shift-5"
+  },
+  "altgr+shift-6": {
+    "key": "^xev",
+    "code": 6,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "⅜",
+    "id": "altgr+shift-6"
+  },
+  "altgr+shift-7": {
+    "key": "^xev",
+    "code": 7,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "⅝",
+    "id": "altgr+shift-7"
+  },
+  "altgr+shift-8": {
+    "key": "^xev",
+    "code": 8,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "⅞",
+    "id": "altgr+shift-8"
+  },
+  "altgr+shift-9": {
+    "key": "^xev",
+    "code": 9,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "™",
+    "id": "altgr+shift-9"
+  },
+  "altgr+shift-10": {
+    "key": "^xev",
+    "code": 10,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "±",
+    "id": "altgr+shift-10"
+  },
+  "altgr+shift-11": {
+    "key": "^xev",
+    "code": 11,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "°",
+    "id": "altgr+shift-11"
+  },
+  "altgr+shift-12": {
+    "key": "^xev",
+    "code": 12,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¿",
+    "id": "altgr+shift-12"
+  },
+  "altgr+shift-13": {
+    "key": "^xev",
+    "code": 13,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¸",
+    "id": "altgr+shift-13"
+  },
+  "altgr+shift-16": {
+    "key": "^xev",
+    "code": 16,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ω",
+    "id": "altgr+shift-16"
+  },
+  "altgr+shift-17": {
+    "key": "^xev",
+    "code": 17,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ł",
+    "id": "altgr+shift-17"
+  },
+  "altgr+shift-18": {
+    "key": "^xev",
+    "code": 18,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "a",
+    "id": "altgr+shift-18"
+  },
+  "altgr+shift-19": {
+    "key": "^xev",
+    "code": 19,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "®",
+    "id": "altgr+shift-19"
+  },
+  "altgr+shift-20": {
+    "key": "^xev",
+    "code": 20,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ŧ",
+    "id": "altgr+shift-20"
+  },
+  "altgr+shift-21": {
+    "key": "^xev",
+    "code": 21,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¥",
+    "id": "altgr+shift-21"
+  },
+  "altgr+shift-22": {
+    "key": "^xev",
+    "code": 22,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "↑",
+    "id": "altgr+shift-22"
+  },
+  "altgr+shift-23": {
+    "key": "^xev",
+    "code": 23,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "ı",
+    "id": "altgr+shift-23"
+  },
+  "altgr+shift-24": {
+    "key": "^xev",
+    "code": 24,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ø",
+    "id": "altgr+shift-24"
+  },
+  "altgr+shift-25": {
+    "key": "^xev",
+    "code": 25,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Þ",
+    "id": "altgr+shift-25"
+  },
+  "altgr+shift-26": {
+    "key": "^xev",
+    "code": 26,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¨",
+    "id": "altgr+shift-26"
+  },
+  "altgr+shift-27": {
+    "key": "^xev",
+    "code": 27,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "¯",
+    "id": "altgr+shift-27"
+  },
+  "altgr+shift-30": {
+    "key": "^xev",
+    "code": 30,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Æ",
+    "id": "altgr+shift-30"
+  },
+  "altgr+shift-31": {
+    "key": "^xev",
+    "code": 31,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "ẞ",
+    "id": "altgr+shift-31"
+  },
+  "altgr+shift-32": {
+    "key": "^xev",
+    "code": 32,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ð",
+    "id": "altgr+shift-32"
+  },
+  "altgr+shift-33": {
+    "key": "^xev",
+    "code": 33,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "ª",
+    "id": "altgr+shift-33"
+  },
+  "altgr+shift-34": {
+    "key": "^xev",
+    "code": 34,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ŋ",
+    "id": "altgr+shift-34"
+  },
+  "altgr+shift-35": {
+    "key": "^xev",
+    "code": 35,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ħ",
+    "id": "altgr+shift-35"
+  },
+  "altgr+shift-36": {
+    "key": "^xev",
+    "code": 36,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "˙",
+    "id": "altgr+shift-36"
+  },
+  "altgr+shift-37": {
+    "key": "^xev",
+    "code": 37,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "&",
+    "id": "altgr+shift-37"
+  },
+  "altgr+shift-38": {
+    "key": "^xev",
+    "code": 38,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "Ł",
+    "id": "altgr+shift-38"
+  },
+  "altgr+shift-39": {
+    "key": "^xev",
+    "code": 39,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "˝",
+    "id": "altgr+shift-39"
+  },
+  "altgr+shift-40": {
+    "key": "^xev",
+    "code": 40,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "^",
+    "id": "altgr+shift-40"
+  },
+  "altgr+shift-43": {
+    "key": "^xev",
+    "code": 43,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "`",
+    "id": "altgr+shift-43"
+  },
+  "altgr+shift-44": {
+    "key": "^xev",
+    "code": 44,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "›",
+    "id": "altgr+shift-44"
+  },
+  "altgr+shift-45": {
+    "key": "^xev",
+    "code": 45,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "‹",
+    "id": "altgr+shift-45"
+  },
+  "altgr+shift-46": {
+    "key": "^xev",
+    "code": 46,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "©",
+    "id": "altgr+shift-46"
+  },
+  "altgr+shift-47": {
+    "key": "^xev",
+    "code": 47,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "‚",
+    "id": "altgr+shift-47"
+  },
+  "altgr+shift-48": {
+    "key": "^xev",
+    "code": 48,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "‘",
+    "id": "altgr+shift-48"
+  },
+  "altgr+shift-49": {
+    "key": "^xev",
+    "code": 49,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "’",
+    "id": "altgr+shift-49"
+  },
+  "altgr+shift-50": {
+    "key": "^xev",
+    "code": 50,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "º",
+    "id": "altgr+shift-50"
+  },
+  "altgr+shift-51": {
+    "key": "^xev",
+    "code": 51,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "×",
+    "id": "altgr+shift-51"
+  },
+  "altgr+shift-52": {
+    "key": "^xev",
+    "code": 52,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "÷",
+    "id": "altgr+shift-52"
+  },
+  "altgr+shift-53": {
+    "key": "^xev",
+    "code": 53,
+    "altgr": true,
+    "shift": true,
+    "modifiers": "altgr+shift",
+    "text": "—",
+    "id": "altgr+shift-53"
+  }
+}
