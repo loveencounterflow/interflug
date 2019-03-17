@@ -21,15 +21,14 @@ PD                        = require 'pipedreams'
   select }                = PD
 { assign
   jr }                    = CND
-L                         = @
 CP                        = require 'child_process'
-IFL                       = require '../..'
+# IFL                       = require '../..'
 
 
 #===========================================================================================================
 # READ KEYBOARD
 #-----------------------------------------------------------------------------------------------------------
-@read_from_keyboard = ( keyboard_map = null ) ->
+@new_keyboard_event_source = ( keyboard_map = null ) ->
   # path      = '/dev/input/by-path/platform-i8042-serio-0-event-kbd'
   # source    = PD.read_chunks_from_file path, 24
   keyboard_map     ?= require PATH.resolve __dirname, '../../src/k/keyboard-map.json'
@@ -40,6 +39,7 @@ IFL                       = require '../..'
   pipeline.push @_$rechunk_buffer 24
   pipeline.push @_$decode_keyboard_event_buffer()
   pipeline.push @_$capture_levels()
+  # pipeline.push @_$simplify_levels()
   pipeline.push @_$capture_modifiers()
   pipeline.push @_$map_keyboard_events keyboard_map
   #.........................................................................................................
@@ -68,47 +68,67 @@ IFL                       = require '../..'
     value = buffer.readInt32LE  20
     move  = if value is 1 then 'down' else 'up'
     name  = keycodes[ code ] ? null
-    send { key: '^key', name, code, move, }
+    send PD.new_event '^keypress', { name, code, move, }
     return null
 
 #-----------------------------------------------------------------------------------------------------------
 @_$capture_levels = ->
   nested_levels = false
-  prv_shift     = null
+  prv_level     = null
   state         =
-    leftshift:    false
-    rightshift:   false
-    leftmeta:     false
-    rightmeta:    false
-    leftctrl:     false
-    rightctrl:    false
-    leftalt:      false
-    rightalt:     false
+    shift:        false
+    meta:         false
+    ctrl:         false
+    alt:          false
+    altgr:        false
     capslock:     false
     numlock:      false
     insert:       false
     compose:      false
   #.........................................................................................................
   return $ ( d, send ) ->
-    # debug '26622', d, prv_shift
-    is_within_level = state[ d.name ]
+    # debug '26622', d, prv_level
+    v               = d.value
+    level           = v.name.replace 'rightalt', 'altgr'
+    level           = level.replace /^(left|right)/, ''
+    is_within_level = state[ level ]
     is_shift        = is_within_level?
     if is_shift
-      if d.move is 'down'
-        prv_shift = d.name
-      else if d.name is prv_shift
+      if v.move is 'down'
+        prv_level = level
+      else if level is prv_level
         unless nested_levels
           for name, toggle of state
-            continue if name is d.name
+            continue if name is level
             if toggle
               state[ name ] = false
-              send { key: '>level', name, }
-        key             = if is_within_level then '>level' else '<level'
-        state[ d.name ] = not state[ d.name ]
-        send { key, name: d.name, }
+              send PD.new_event '>keyboard-level', { name, }
+        key             = if is_within_level then '>keyboard-level' else '<keyboard-level'
+        state[ level ] = not state[ level ]
+        send PD.new_event key, { name: level, }
     else
-      prv_shift = null
+      prv_level = null
     send d
+
+# #-----------------------------------------------------------------------------------------------------------
+# @_$simplify_levels = ->
+#   state         =
+#     shift:        false
+#     meta:         false
+#     ctrl:         false
+#     alt:          false
+#     capslock:     false
+#     numlock:      false
+#     insert:       false
+#     compose:      false
+#   return $ ( d, send ) ->
+#     return send d unless ( select d, '<keyboard-level' ) or ( select d, '>keyboard-level' )
+#     v             = d.value
+#     name          = v.name.replace /^(left|right)/, ''
+#     state[ name ] = not state[ name ]
+#     if state[ name ] then send PD.new_event '<keyboard-level', { name, }
+#     else                  send PD.new_event '>keyboard-level', { name, }
+#     return null
 
 #-----------------------------------------------------------------------------------------------------------
 @_$capture_modifiers = ->
@@ -122,22 +142,23 @@ IFL                       = require '../..'
     capslock:   false
   #.........................................................................................................
   return $ ( d, send ) ->
-    return send d unless d.key is '^key'
-    switch d.name
-      when 'leftshift', 'rightshift'  then state.shift    = ( d.move is 'down' )
-      when 'leftmeta',  'rightmeta'   then state.meta     = ( d.move is 'down' )
-      when 'leftctrl',  'rightctrl'   then state.ctrl     = ( d.move is 'down' )
-      when 'leftalt'                  then state.alt      = ( d.move is 'down' )
-      when 'rightalt'                 then state.altgr    = ( d.move is 'down' )
-      when 'capslock'                 then state.capslock = ( d.move is 'down' )
+    return send d unless d.key is '^keypress'
+    v = d.value
+    switch v.name
+      when 'leftshift', 'rightshift'  then state.shift    = ( v.move is 'down' )
+      when 'leftmeta',  'rightmeta'   then state.meta     = ( v.move is 'down' )
+      when 'leftctrl',  'rightctrl'   then state.ctrl     = ( v.move is 'down' )
+      when 'leftalt'                  then state.alt      = ( v.move is 'down' )
+      when 'rightalt'                 then state.altgr    = ( v.move is 'down' )
+      when 'capslock'                 then state.capslock = ( v.move is 'down' )
       else
         modifiers.length = 0
         for name in [ 'alt', 'altgr', 'ctrl', 'meta', 'shift', 'capslock', ]
           continue unless state[ name ]
-          d[ name ] = true
+          v[ name ] = true
           modifiers.push name
-        d.modifiers = modifiers.join '+' if modifiers.length > 0
-        d.id = "#{d.modifiers ? 'null'}-#{d.code}"
+        v.modifiers = modifiers.join '+' if modifiers.length > 0
+        v.id        = "#{v.modifiers ? 'null'}-#{v.code}"
         send d
     return null
 
@@ -175,17 +196,5 @@ IFL                       = require '../..'
   pipeline.push PD.$drain()
   PD.pull pipeline...
   return null
-
-
-############################################################################################################
-unless module.parent?
-  # f()
-  L = @
-  do ->
-    # info '23883', keyboard_map
-    # await L.read_xmodmap()
-    await L.demo()
-
-
 
 
